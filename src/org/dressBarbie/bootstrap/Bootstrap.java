@@ -41,7 +41,6 @@ public class Bootstrap {
 			System.out.println("[INFO] "+new Date()+": File manager started!");
 			@SuppressWarnings("unused")
 			FileDownloader fd = new FileDownloader();
-			System.gc();
 			} else {
 				System.out.println("[ERROR] "+new Date()+": Java version too low!");
 				System.exit(0);
@@ -66,7 +65,6 @@ public class Bootstrap {
 			System.out.println("[INFO] "+new Date()+": File manager started!");
 			@SuppressWarnings("unused")
 			FileDownloader fd = new FileDownloader();
-			System.gc();
 			} else {
 				System.out.println("[ERROR] "+new Date()+": Java version too low!");
 				System.exit(0);
