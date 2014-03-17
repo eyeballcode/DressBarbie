@@ -18,7 +18,7 @@ public class TabPanes {
 		jokes.add(new JLabel("<html><body><center>There will be more next time! I know right? You can log in anywhere, even on the moon!<p>Wait till it comes! Don't scream your head off!<p>P.S. The launcher started at "+d+"</center></center></body></html>"+
 				"Note: We are planning to add a feature to automatically download updates!</center></center></body></html>"));
 		tabbedPanes.add("Developement Console", jokes);
-		tabbedPanes.add("Play", LoginPage.getLoginTab());
+		tabbedPanes.add("Tools and Options", LoginPage.getLoginTab());
 		tabbedPanes.add("Report a bug",Bugs.getBugPane());
 		System.gc();
 		 return tabbedPanes;
@@ -31,7 +31,7 @@ public class TabPanes {
 		jokes.add(new JLabel("<html><body><center>There will be more next time! I know right? You can log in anywhere, even on the moon!<p>Wait till it comes! Don't scream your head off!<p>P.S. The launcher started at "+d+"<p>"+
 		"Note: We are planning to add a feature to automatically download updates!</center></center></body></html>"));
 		tabbedPanes.add("Developement Console", jokes);
-		tabbedPanes.add("Play", LoginPage.getLoginTab());
+		tabbedPanes.add("Tools and Options", LoginPage.getLoginTab());
 		tabbedPanes.add("Report a bug",BugsOffline.getBugPane());
 		System.gc();
 		 return tabbedPanes;
