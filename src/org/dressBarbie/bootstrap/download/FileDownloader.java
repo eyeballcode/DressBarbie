@@ -10,6 +10,9 @@ import java.nio.channels.ReadableByteChannel;
 import java.util.Date;
 
 public class FileDownloader {
+
+    private static final String IMG_URL = "https://raw.githubusercontent.com/eyeballcode/DressBarbie/master/img/barbie.png";
+
 	public FileDownloader() {
 		URL website;
 		File f;
@@ -22,7 +25,7 @@ public class FileDownloader {
 			System.out.println("[INFO] "+new Date()+": Loading updates...");
 			System.out.println("[INFO] "+new Date()+": Downloading files...");
 			System.out.println("[INFO] "+new Date()+": Please wait, this may take quite a while depending on your internet connection.");
-				website = new URL("https://sites.google.com/site/edwardjavajar/home/dressbarbie/icon.png");
+				website = new URL(IMG_URL);
 			
 			ReadableByteChannel rbc = Channels.newChannel(website.openStream());
 			FileOutputStream fos = new FileOutputStream(System.getProperty("user.home")+"/.dressbarbie/icon.png");
@@ -54,7 +57,7 @@ public class FileDownloader {
 			System.out.println("[INFO] "+new Date()+": Loading updates...");
 			System.out.println("[INFO] "+new Date()+": Downloading files...");
 			System.out.println("[INFO] "+new Date()+": Please wait, this may take quite a while depending on your internet connection.");
-				website = new URL("https://sites.google.com/site/edwardjavajar/home/dressbarbie/icon.png");
+				website = new URL(IMG_URL);
 			
 			ReadableByteChannel rbc = Channels.newChannel(website.openStream());
 			FileOutputStream fos = new FileOutputStream(System.getProperty("user.home")+"/.dressbarbie/icon.png");
