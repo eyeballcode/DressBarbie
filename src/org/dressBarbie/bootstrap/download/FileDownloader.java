@@ -25,7 +25,7 @@ public class FileDownloader {
 			System.out.println("[INFO] "+new Date()+": Loading updates...");
 			System.out.println("[INFO] "+new Date()+": Downloading files...");
 			System.out.println("[INFO] "+new Date()+": Please wait, this may take quite a while depending on your internet connection.");
-				website = new URL(IMG_URL);
+			website = new URL(IMG_URL);
 			
 			ReadableByteChannel rbc = Channels.newChannel(website.openStream());
 			FileOutputStream fos = new FileOutputStream(System.getProperty("user.home")+"/.dressbarbie/icon.png");
@@ -51,7 +51,7 @@ public class FileDownloader {
 		File f;
 		try {
 			System.out.println("[INFO] "+new Date()+": Creating Dress the Barbie folder...");
-			f = new File(System.getProperty("user.home")+"/.dressbarbie/bin");
+			f = new File(System.getProperty("user.home")+"/.dressbarbie/");
 			f.mkdirs();
 			System.out.println("[INFO] "+new Date()+": Done creating folder");
 			System.out.println("[INFO] "+new Date()+": Loading updates...");

@@ -39,11 +39,7 @@ public class UpdateNotes {
 		update.setContentType("text/html");
 		update.setText("<html><body><font color=\"#808080\"><br><br><br><br><br><br><br><center><h1>Loading update news...</h1></center></font></body></html>");
 		update.addHyperlinkListener(EXTERNAL_HYPERLINK_LISTENER);
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-		}
-		String img = "https://ef6ac14b-a-62cb3a1a-s-sites.googlegroups.com/site/edwardjavajar/home/dressbarbie/icon.png";
+		String img = "https://raw.githubusercontent.com/eyeballcode/DressBarbie/master/img/barbie.png";
 		update.setText("<html><body><head><center><font size=\"6\" color=\"F000E0\"><img src=\""+img+"\"></img><p><p><a href=\"http://dressbarbie.blogspot.sg/\">Dress the barbie</a></font></center></head></body></html>");
 		update.setPreferredSize(new Dimension(600, 500));
 		 update.setBackground(Color.BLUE);

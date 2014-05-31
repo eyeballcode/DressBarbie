@@ -19,9 +19,6 @@ public class LoginPage {
 					System.out.println("[INFO] "+new Date()+": Starting game...");
 					System.out.println("[NOTE] "+new Date()+": After game closes, launcher will also close.");
 					org.dressBarbie.bootstrap.launcherFrame.MainFrame.launcherFrame = null;
-					@SuppressWarnings("unused")
-					org.dressBarbie.play.frames.MainFrame f = new org.dressBarbie.play.frames.MainFrame();
-					System.gc();
 				}
 		};
 		static ActionListener rebootSys = new ActionListener() {

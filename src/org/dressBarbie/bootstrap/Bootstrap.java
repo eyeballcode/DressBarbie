@@ -5,16 +5,8 @@ import java.util.Date;
 import org.dressBarbie.bootstrap.download.FileDownloader;
 import org.dressBarbie.bootstrap.util.Utils;
 
+
 public class Bootstrap {
-	/**
-	 * <html><body><u>A short help guide on version numbers.</u><br>
-	 * "1.0.0"<br>
-	 * ⬇<br>
-	 * 1 ➡ major release version<br>
-	 * .0 ➡ minor version<br>
-	 * .0 ➡ patch number<br>
-	 * Example ➡ 1.2.3 ➡ main version 1, subversion 2, patch update 3.</body></html>
-	 */
 	public static String verId = "1.5.2";
 	public static Date d = new Date();
 	
