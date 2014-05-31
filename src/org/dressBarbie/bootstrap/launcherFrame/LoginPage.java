@@ -53,6 +53,8 @@ public class LoginPage {
 		public static JPanel getLoginTab() {
 		JPanel loginPage = new JPanel();
 		JButton play = new JButton("Play");
+		play.setEnabled(false);
+		play.setToolTipText("<html><body><font size=\"3\" color=\"red\">Sorry, play mode is currently not avaliable.<p>We apologise for any inconvience caused.</font></body></html");
 		JButton rebootSystem = new JButton("Reboot System");
 		JButton retryDownloadButton = new JButton("Retry Download");
 		retryDownloadButton.addActionListener(retryDownloadListener);
