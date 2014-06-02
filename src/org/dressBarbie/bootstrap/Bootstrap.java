@@ -1,8 +1,13 @@
 package org.dressBarbie.bootstrap;
 
+import java.io.BufferedReader;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.URL;
+import java.nio.channels.Channels;
+import java.nio.channels.ReadableByteChannel;
 import java.util.Date;
-import java.util.Scanner;
 
 import org.dressBarbie.bootstrap.download.FileDownloader;
 import org.dressBarbie.bootstrap.util.Utils;
@@ -10,22 +15,39 @@ import org.dressBarbie.bootstrap.util.Utils;
 
 public class Bootstrap {
 	private static String get() {
-		Scanner s = null;
+		URL website = null;
+		BufferedReader br = null;
+		String s = null;
 		try {
-			   URL url = new URL("http://www.puzzlers.org/pub/wordlists/pocket.txt");
-			   s = new Scanner(url.openStream());
-			   // read from your scanner
+		website = new URL("https://raw.githubusercontent.com/eyeballcode/DressBarbie/master/verIDcontrol");
+		
+		ReadableByteChannel rbc = Channels.newChannel(website.openStream());
+		FileOutputStream fos;
+			fos = new FileOutputStream(System.getProperty("user.home")+"/.dressbarbie/verID");
+		fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+		fos.close();
+		    br = new BufferedReader(new FileReader(System.getProperty("user.home")+"/.dressbarbie/verID"));
+		        StringBuilder sb = new StringBuilder();
+		        String line = br.readLine();
+
+		        while (line != null) {
+		            sb.append(line);
+		            sb.append(System.lineSeparator());
+		            line = br.readLine();
+		        }
+		        s = sb.toString();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				br.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-			catch(Exception ex) {
-			   // there was some connection problem, or the file did not exist on the server,
-			   // or your URL was not in the right format.
-			   // think about what to do now, and put it here.
-			   ex.printStackTrace(); // for now, simply output it.
-			} finally {
-				s.close();
-			}
-	System.out.println(s.toString());
-	return s.toString();
+		}
+		return s.toString();
 	}
 	public static String verID = get();
 	public static Date d = new Date();
