@@ -1,6 +1,7 @@
 package org.dressBarbie.bootstrap;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
@@ -8,7 +9,6 @@ import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 import java.util.Date;
-
 import org.dressBarbie.bootstrap.download.FileDownloader;
 import org.dressBarbie.bootstrap.util.Utils;
 
@@ -20,7 +20,8 @@ public class Bootstrap {
 		String s = null;
 		try {
 		website = new URL("https://raw.githubusercontent.com/eyeballcode/DressBarbie/master/verIDcontrol");
-		
+		File f = new File(System.getProperty("user.home")+"/.dressbarbie/verID");
+		f.delete();
 		ReadableByteChannel rbc = Channels.newChannel(website.openStream());
 		FileOutputStream fos;
 			fos = new FileOutputStream(System.getProperty("user.home")+"/.dressbarbie/verID");
