@@ -10,7 +10,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 import org.dressBarbie.bootstrap.Bootstrap;
 
 public class MainFrame {
-	static String verID = Bootstrap.verId;
+	static String verID = Bootstrap.verID;
 	static JFrame launcherFrame;
     private final static void setDesign() {
         try {

@@ -1,13 +1,33 @@
 package org.dressBarbie.bootstrap;
 
+import java.net.URL;
 import java.util.Date;
+import java.util.Scanner;
 
 import org.dressBarbie.bootstrap.download.FileDownloader;
 import org.dressBarbie.bootstrap.util.Utils;
 
 
 public class Bootstrap {
-	public static String verId = "1.5.2";
+	private static String get() {
+		Scanner s = null;
+		try {
+			   URL url = new URL("http://www.puzzlers.org/pub/wordlists/pocket.txt");
+			   s = new Scanner(url.openStream());
+			   // read from your scanner
+			}
+			catch(Exception ex) {
+			   // there was some connection problem, or the file did not exist on the server,
+			   // or your URL was not in the right format.
+			   // think about what to do now, and put it here.
+			   ex.printStackTrace(); // for now, simply output it.
+			} finally {
+				s.close();
+			}
+	System.out.println(s.toString());
+	return s.toString();
+	}
+	public static String verID = get();
 	public static Date d = new Date();
 	
 	public static void main(String[] args) {
@@ -16,7 +36,7 @@ public class Bootstrap {
 			System.out.println("[FATAL ERROR] "+new Date()+": No mode specified!");
 			System.out.println("[INFO] "+new Date()+": Rebooting system...");
 			System.out.println("[INFO] "+new Date()+": SystemSpeeder enabled!");
-			System.out.println("[INFO] "+new Date()+": Dress the Barbie Launcher "+verId+" started on "+System.getProperty("os.name")+"...");
+			System.out.println("[INFO] "+new Date()+": Dress the Barbie Launcher "+verID+" started on "+System.getProperty("os.name")+"...");
 			System.out.println("[INFO] "+new Date()+": Refershing remote version list...");
 			System.out.println("[INFO] "+new Date()+": System.getProperty(\"os.name\") == \""+System.getProperty("os.name")+"\"");
 			System.out.println("[INFO] "+new Date()+": System.getProperty(\"os.arch\") == \""+System.getProperty("os.arch")+"\"");
@@ -39,7 +59,7 @@ public class Bootstrap {
 			}
 		} else {
 			System.out.println("[INFO] "+new Date()+": SystemSpeeder enabled!");
-			System.out.println("[INFO] "+new Date()+": Dress the Barbie Launcher "+verId+" started on "+System.getProperty("os.name")+"...");
+			System.out.println("[INFO] "+new Date()+": Dress the Barbie Launcher "+verID+" started on "+System.getProperty("os.name")+"...");
 			System.out.println("[INFO] "+new Date()+": Refershing remote version list...");
 			System.out.println("[INFO] "+new Date()+": System.getProperty(\"java.vm.info\") == \""+System.getProperty("java.vm.info")+"\"");
 			System.out.println("[INFO] "+new Date()+": System.getProperty(\"os.name\") == \""+System.getProperty("os.name")+"\"");
