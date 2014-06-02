@@ -21,7 +21,7 @@ public class Bootstrap {
 		try {
 		website = new URL("https://raw.githubusercontent.com/eyeballcode/DressBarbie/master/verIDcontrol");
 		File f = new File(System.getProperty("user.home")+"/.dressbarbie/verID");
-		f.delete();
+		if (f.exists()) { f.delete(); }
 		ReadableByteChannel rbc = Channels.newChannel(website.openStream());
 		FileOutputStream fos;
 			fos = new FileOutputStream(System.getProperty("user.home")+"/.dressbarbie/verID");
