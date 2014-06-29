@@ -4,12 +4,13 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.IOException;
 import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 import java.util.Date;
+
 import org.dressBarbie.bootstrap.download.FileDownloader;
+import org.dressBarbie.bootstrap.download.FileDownloaderNO;
 import org.dressBarbie.bootstrap.util.Utils;
 
 
@@ -38,14 +39,12 @@ public class Bootstrap {
 		        }
 		        s = sb.toString();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			FileDownloaderNO.run(e);
 		} finally {
 			try {
 				br.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			} catch (Exception e) {
+				FileDownloaderNO.run(e);
 			}
 		}
 		return s.toString();
